@@ -1,11 +1,11 @@
 /*
     Credits: GabeVilela
-    Version: 1.0.0
+    Version: 1.0.1
 */
 #browser.tabs-top .tab-position:not(.is-substack) .tab .tab-header::before {
     content                : " ";
     width                  : 0%;
-    background-color       : var(--colorHighlightBgUnfocused);
+    background-color       : var(--colorBorderIntense);
     height                 : 2px;
     position               : fixed;
     z-index                : 0;
@@ -18,9 +18,16 @@
 }
 
 #browser.tabs-top .tab-position:not(.is-substack) .tab:hover .tab-header::before {
-    width     : var(--modTablineWidthFull);
-    transition: 0.1s ease-out !important;
-    left      : var(--modTablineLeftFull);
+    width           : var(--modTablineWidthFull);
+    transition      : 0.15s cubic-bezier(0, 1, 0.58, 1) !important;
+    transition-delay: 0.05s;
+    left            : var(--modTablineLeftFull);
+}
+
+#browser.tabs-top .tab-position:not(.is-substack) .tab.unread:hover .tab-header::before {
+    --modTablineClipTop   : calc(100% - 7px);
+    --modTablineClipBottom: calc(100% - 6px);
+    clip-path             : polygon(0 0, var(--modTablineClipTop) 0, var(--modTablineClipBottom) 100%, 0% 100%);
 }
 
 #browser.tabs-top .tab-position:not(.is-substack) .tab.active .tab-header::before {
@@ -28,7 +35,6 @@
     width           : var(--modTablineWidthFull);
     background-color: var(--colorHighlightBg);
     left            : var(--modTablineLeftFull);
-    transition      : 0s !important;
 }
 
 #browser.tabs-top #tabs-subcontainer .tab .tab-header::before {

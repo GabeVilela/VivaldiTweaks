@@ -1,0 +1,7 @@
+/*
+    Credits: GabeVilela
+    Version: 1.0.0
+*/
+.tab:hover:not(.active) {
+    background-color: var(--colorFgAlpha) !important;
+}
