@@ -1,0 +1,7 @@
+/*
+    Credits: GabeVilela
+    Version: 1.0.0
+*/
+.theme-dark .tab-position .tab.active .tab-header .favicon:not(.svg) {
+    filter: none !important;
+}
