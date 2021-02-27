@@ -1,0 +1,48 @@
+/*
+    Credits: GabeVilela
+    Version: 1.0.0
+*/
+#browser.tabs-top .tab-position:not(.is-substack) .tab .tab-header::before {
+    content                : " ";
+    width                  : 0%;
+    background-color       : var(--colorHighlightBgUnfocused);
+    height                 : 2px;
+    position               : fixed;
+    z-index                : 0;
+    left                   : 50%;
+    top                    : 0px;
+    border-top-left-radius : var(--radiusHalf);
+    border-top-right-radius: var(--radiusHalf);
+    --modTablineLeftFull   : 0%;
+    --modTablineWidthFull  : calc(100% - 1px);
+}
+
+#browser.tabs-top .tab-position:not(.is-substack) .tab:hover .tab-header::before {
+    width     : var(--modTablineWidthFull);
+    transition: 0.1s ease-out !important;
+    left      : var(--modTablineLeftFull);
+}
+
+#browser.tabs-top .tab-position:not(.is-substack) .tab.active .tab-header::before {
+    content         : " ";
+    width           : var(--modTablineWidthFull);
+    background-color: var(--colorHighlightBg);
+    left            : var(--modTablineLeftFull);
+    transition      : 0s !important;
+}
+
+#browser.tabs-top #tabs-subcontainer .tab .tab-header::before {
+    top                  : 2px !important;
+    --modTablineLeftFull : 1px;
+    --modTablineWidthFull: calc(100% - 2px);
+}
+
+#browser.tabs-top .tab-position:not(.is-substack) .tab.tab-group .tab-header::before {
+    top: 1px;
+}
+
+#browser.tabs-top.tabs-at-edge .tab-position:not(.is-substack) .tab.tab-group .tab-header::before {
+    top                    : 4px;
+    border-top-left-radius : 0px;
+    border-top-right-radius: 0px;
+}
