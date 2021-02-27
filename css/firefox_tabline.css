@@ -1,11 +1,17 @@
 /*
     Credits: GabeVilela
-    Version: 1.0.1
+    Version: 1.0.2
 */
-#browser.tabs-top .tab-position:not(.is-substack) .tab .tab-header::before {
+#browser.tabs-top.theme-light .tab .tab-header::before{
+    --modTablineUnfocusColor: hsla(0,0%,0%,0.5);
+}
+#browser.tabs-top.theme-dark .tab .tab-header::before{
+    --modTablineUnfocusColor: hsla(0,0%,60%,0.5);
+}
+#browser.tabs-top .tab-position .tab .tab-header::before {
     content                : " ";
     width                  : 0%;
-    background-color       : var(--colorBorderIntense);
+    background-color       : var(--modTablineUnfocusColor);
     height                 : 2px;
     position               : fixed;
     z-index                : 0;
@@ -30,7 +36,7 @@
     clip-path             : polygon(0 0, var(--modTablineClipTop) 0, var(--modTablineClipBottom) 100%, 0% 100%);
 }
 
-#browser.tabs-top .tab-position:not(.is-substack) .tab.active .tab-header::before {
+#browser.tabs-top .tab-position .tab.active .tab-header::before {
     content         : " ";
     width           : var(--modTablineWidthFull);
     background-color: var(--colorHighlightBg);

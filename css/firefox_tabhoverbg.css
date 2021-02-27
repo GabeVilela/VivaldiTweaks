@@ -1,7 +1,13 @@
 /*
     Credits: GabeVilela
-    Version: 1.0.0
+    Version: 1.0.1
 */
+#browser.tabs-top.theme-light .tab{
+    --modTabhoverColor: hsla(0,0%,0%,0.15);
+}
+#browser.tabs-top.theme-dark .tab{
+    --modTabhoverColor: hsla(0,0%,100%,0.15);
+}
 .tab:hover:not(.active) {
-    background-color: var(--colorFgAlpha) !important;
+    background-color: var(--modTabhoverColor) !important;
 }

@@ -1,0 +1,53 @@
+/*
+    Credits: GabeVilela
+    Version: 1.0.0
+*/
+/* Global */
+#browser.tabs-top .tab-position[style*="--ZIndex:2;"]::before,
+#browser.tabs-top .tab-position[style*="--ZIndex:2;"]::after,
+#browser.tabs-bottom .tab-position[style*="--ZIndex:2;"]::before,
+#browser.tabs-bottom .tab-position[style*="--ZIndex:2;"]::after {
+    content         : " ";
+    width           : 100vw;
+    height          : 1px;
+    position        : fixed;
+    background-color: var(--colorBorder);
+    z-index         : 1;
+}
+
+#browser.tabs-top .tab-position::before,
+#browser.tabs-bottom .tab-position::before {
+    left: -100vw
+}
+
+#browser.tabs-top .tab-position::after,
+#browser.tabs-bottom .tab-position::after {
+    right: calc(-100vw + 1px);
+}
+
+#browser.tabs-top .tab.active,
+#browser.tabs-bottom .tab.active {
+    border-left : 1px solid var(--colorBorder);
+    border-right: 1px solid var(--colorBorder);
+}
+
+#browser.tabs-top .tab.active .tab-header,
+#browser.tabs-bottom .tab.active .tab-header {
+    padding-left: 5px;
+}
+
+#browser:not(.alt-tabs) #tabs-container .tab.active .close {
+    margin-right: 5px !important;
+}
+
+/* For top tabs */
+#browser.tabs-top .tab-position::before,
+#browser.tabs-top .tab-position::after {
+    bottom: 0px;
+}
+
+/* For bottom tabs */
+#browser.tabs-bottom .tab-position::before,
+#browser.tabs-bottom .tab-position::after {
+    top: 0px;
+}
