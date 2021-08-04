@@ -1,7 +1,12 @@
 /*
     You can add references to your own .css stylessheets in this file
 */
+
+/* ENABLED  */
+@import url("css/remove_whiteborders_favicon.css");
+@import url("css/remove_menu_fullscreen.css");
+
+/* DISABLED ↓  ↓  ↓  ↓  ↓  ↓  ↓
 @import url("css/firefox_tabline.css");
 @import url("css/firefox_tabhoverbg.css");
-@import url("css/remove_whiteborders_favicon.css");
 @import url("css/tabborder.css");
